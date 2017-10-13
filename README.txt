@@ -1,3 +1,14 @@
+USAGE
+
+- Store a file in ~/Desktop/transcription_in/
+- open iTerm and run
+
+cd ~/jomi-projects/google-speech-to-text
+source env/bin/activate
+python auto_run.py ~/Desktop/transcription_in/
+
+INSTALLATION
+
 This script is for extracting and transcribing audio files from .mp4 video files into .srt formatted text files for subtitling purposes using Googles Speech-to-Text and Google Cloud Storage APIs. It outputs both a raw text transcription and a .srt formatted version. In the current version, this script requires you to authenticate your Google credentials through the gcloud CLI and also requires that you have ffmpeg installed locally on your machine (for video to audio conversion and compression)
 
 Instructions for use
@@ -43,7 +54,7 @@ To run transcription script add .mp4 files to a specified directory
 
 Then run:
 
-    python autorun.py /path/to/directory/
+    python auto_run.py /path/to/directory/
 
 The script will automatically strip the audio files from the video and convert them to .ogg format
 
