@@ -1,11 +1,6 @@
 USAGE
 
-- Store a file in ~/Desktop/transcription_in/
-- open iTerm and run
-
-cd ~/jomi-projects/google-speech-to-text
-source env/bin/activate
-python auto_run.py ~/Desktop/transcription_in/
+https://docs.google.com/document/d/1vI_1rxZa0yYsjjiVUBoUlwoH_j7AanGDvSsMvNhx5Gk/edit
 
 INSTALLATION
 
