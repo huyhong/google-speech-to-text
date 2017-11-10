@@ -1,3 +1,9 @@
+USAGE
+
+https://docs.google.com/document/d/1vI_1rxZa0yYsjjiVUBoUlwoH_j7AanGDvSsMvNhx5Gk/edit
+
+INSTALLATION
+
 This script is for extracting and transcribing audio files from .mp4 video files into .srt formatted text files for subtitling purposes using Googles Speech-to-Text and Google Cloud Storage APIs. It outputs both a raw text transcription and a .srt formatted version. In the current version, this script requires you to authenticate your Google credentials through the gcloud CLI and also requires that you have ffmpeg installed locally on your machine (for video to audio conversion and compression)
 
 Instructions for use
@@ -17,14 +23,18 @@ Download, install and set up Google SDK
 https://cloud.google.com/sdk/
 (authenticate your machine by following the auth instructions)
 
+On OSX make sure you have brew (install from https://brew.sh/ if not)
+
 Install ffmpeg
-    sudo apt update
-    sudo apt install ffmpeg
+    brew update
+    brew install ffmpeg --enable-libopus
+    To install with all options: http://www.renevolution.com/ffmpeg/2013/03/16/how-to-install-ffmpeg-on-mac-os-x.html
 
 Set your virtual environment
 
 If you don't have virtualenv, install it using pip.
 
+    OSX: sudo easy_install pip
     sudo pip install virtualenv
 
 Create an isolated Python environment, and install dependencies:
@@ -39,7 +49,7 @@ To run transcription script add .mp4 files to a specified directory
 
 Then run:
 
-    python autorun.py /path/to/directory/
+    python auto_run.py /path/to/directory/
 
 The script will automatically strip the audio files from the video and convert them to .ogg format
 
