@@ -28,7 +28,7 @@ def format_transcript(results, audio_file):
             words = alternative.words
             print(words)
             if len(words) < 14:
-                transcript = alternative.transcript
+                transcript = alternative.transcript.encode('utf-8')
                 start_time = words[0].start_time
                 end_time = words[-1].end_time
                 start_time_seconds = start_time.seconds + start_time.nanos * 1e-9
@@ -52,7 +52,7 @@ def format_transcript(results, audio_file):
 
                     section = ''
                     for word_info in words:
-                        section += word_info.word + " "
+                        section += word_info.word.encode('utf-8') + " "
 
                     counter += 1
                     file.write(str(counter) + '\n')

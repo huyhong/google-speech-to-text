@@ -10,7 +10,7 @@ def transcribe_gcs(mp4_file):
     audio_file_path = process_video(mp4_file) #Create audio file
 
     if audio_file_path:
-        bucket_name = 'test-dictation' # Your gcloud bucket name
+        bucket_name = 'jomi-speech-to-text.appspot.com' # Your gcloud bucket name
         print(mp4_file)
         audio_file_name = os.path.basename(audio_file_path) + '.ogg'
         print(audio_file_name)
@@ -41,7 +41,7 @@ def transcribe_gcs(mp4_file):
         raw_text_file = open( audio_file_path + '.txt', 'w')
         for result in results:
             for alternative in result.alternatives:
-                raw_text_file.write(alternative.transcript + '\n')
+                raw_text_file.write(alternative.transcript.encode('utf-8') + '\n')
         raw_text_file.close() #output raw text file of transcription
 
         format_transcript(results, audio_file_path) #output .srt formatted version of transcription
