@@ -27,7 +27,7 @@ On OSX make sure you have brew (install from https://brew.sh/ if not)
 
 Install ffmpeg
     brew update
-    brew install ffmpeg --enable-libopus
+    brew install ffmpeg --with-opus
     To install with all options: http://www.renevolution.com/ffmpeg/2013/03/16/how-to-install-ffmpeg-on-mac-os-x.html
 
 Set your virtual environment
